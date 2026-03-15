@@ -37,7 +37,7 @@ To ensure DoodleTales is ready for the world, we leverage the scalability of **A
 
 ## The Future of Interactive Play
 
-DoodleTales isn't just an app; it's a demonstration of how multimodal AI can foster creativity rather than replace it. By using Amazon's cutting-edge Nova models, we've turned a static piece of paper into a living, breathing dialogue.
+DoodleTales isn't just an app; it's a demonstration of how multimodal AI can foster creativity rather than replace it. By using Amazon's cutting-edge Nova 2 models, we've turned a static piece of paper into a living, breathing dialogue.
 
 We are thrilled to submit this project to the **Amazon Nova Hackathon** and can't wait to see how many more stories we can help children tell!
 

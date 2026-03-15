@@ -67,7 +67,7 @@ export class AmazonAIService implements AIService {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          modelId: "amazon.nova-canvas-v1:0",
+          modelId: "amazon.nova-2-canvas-v1:0",
           body
         })
       });

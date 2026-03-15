@@ -1,6 +1,6 @@
-# 🏗️ DoodleTales: Architectural Nuances (Amazon Nova Edition)
+# 🏗️ DoodleTales: Architectural Nuances (Amazon Nova 2 Edition)
 
-DoodleTales is designed as a **Multimodal AI Agent** that bridges the gap between static drawings and dynamic storytelling. This document outlines the core architectural decisions and technical nuances that make the app unique using the **Amazon Nova** ecosystem.
+DoodleTales is designed as a **Multimodal AI Agent** that bridges the gap between static drawings and dynamic storytelling. This document outlines the core architectural decisions and technical nuances that make the app unique using the **Amazon Nova 2** ecosystem.
 
 ## 1. High-Level Architecture
 
@@ -13,7 +13,7 @@ graph TD
     A -->|Vision API| E[Character Segmentation]
     E -->|Bounding Boxes| F[Interactive Canvas]
     C -->|Tool Calls| G[State Management: Name, Age, Role]
-    G -->|Context| H[Amazon Nova Canvas]
+    G -->|Context| H[Amazon Nova 2 Canvas]
 ```
 
 ## 2. AI Service Layer
@@ -25,9 +25,9 @@ We implemented a clean service layer in `src/services/ai/` to handle AI interact
 
 ## 3. The "Style-Consistency" Nuance
 
-A critical challenge in AI-generated art is maintaining a child's unique drawing style. DoodleTales solves this through **Amazon Nova Canvas's** image-to-image capabilities:
+A critical challenge in AI-generated art is maintaining a child's unique drawing style. DoodleTales solves this through **Amazon Nova 2 Canvas's** image-to-image capabilities:
 
-- **Conditioning Image**: The original drawing is passed as a conditioning image to Nova Canvas.
+- **Conditioning Image**: The original drawing is passed as a conditioning image to Nova 2 Canvas.
 - **Control Mode**: We use `CANNY_EDGE` or similar control modes to ensure the structural integrity of the child's drawing is preserved.
 - **Mandatory Style Instructions**: The prompt explicitly forbids "improving" the drawing, mandating the maintenance of "stick figure" or "simple sketch" aesthetics.
 
