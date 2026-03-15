@@ -17,7 +17,7 @@ DoodleTales is an AI-powered interactive storytelling application that brings ch
 - **Backend**: Node.js, Express.
 - **AI (Amazon Bedrock)**: 
   - `amazon.nova-2-pro-v1:0` (Vision & Reasoning)
-  - `amazon.nova-2-canvas-v1:0` (Style-consistent Image Gen)
+  - `amazon.nova-canvas-v1:0` (Style-consistent Image Gen)
 - **Infrastructure**: Docker, AWS App Runner (connected to Amazon Bedrock).
 
 ## 🚀 Quick Start

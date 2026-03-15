@@ -14,12 +14,12 @@ DoodleTales is a full-stack application built with a focus on visual fidelity an
 -   **Frontend**: Built with **React** and **Tailwind CSS**, using **Motion** for fluid UI transitions.
 -   **AI Intelligence (Amazon Bedrock)**:
     -   `amazon.nova-2-pro-v1:0`: Powers the high-precision character segmentation and the conversational "Storytelling Scout" with **Nova 2** intelligence.
-    -   `amazon.nova-2-canvas-v1:0`: Generates new story scenes using the original sketch as a style reference to maintain character identity.
+    -   `amazon.nova-canvas-v1:0`: Generates new story scenes using the original sketch as a style reference to maintain character identity.
 -   **Tool Integration**: We implemented custom tool specifications (`highlight_character`, `generate_story_image`) that allow the Nova 2 models to interact directly with the frontend state.
 -   **Infrastructure**: Deployed to **AWS App Runner** for high availability and serverless scaling.
 
 ## Challenges we ran into
--   **Style Preservation**: Ensuring the AI respects the "rough sketch" and "crayon" aesthetic of the original child's drawing. We used **Amazon Nova 2 Canvas's** advanced conditioning to lock in the artistic style.
+-   **Style Preservation**: Ensuring the AI respects the "rough sketch" and "crayon" aesthetic of the original child's drawing. We used **Amazon Nova Canvas's** advanced conditioning to lock in the artistic style.
 -   **Multimodal Context**: Managing the history of both text and image inputs to ensure the Scout remembers what characters look like as the story progresses.
 -   **Coordinate Mapping**: Mapping normalized coordinates from Nova 2 Pro (0-1000) to a responsive frontend container.
 
