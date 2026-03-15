@@ -9,7 +9,7 @@ The application follows a **Full-Stack SPA (Single Page Application)** pattern w
 ```mermaid
 graph TD
     A[React Frontend] -->|API Proxy| B[Express Backend]
-    B -->|AWS Bedrock| C[Amazon Nova Pro]
+    B -->|AWS Bedrock| C[Amazon Nova 2 Pro]
     A -->|Vision API| E[Character Segmentation]
     E -->|Bounding Boxes| F[Interactive Canvas]
     C -->|Tool Calls| G[State Management: Name, Age, Role]
@@ -44,7 +44,7 @@ The "Storytelling Scout" is an agent with tools defined via the Bedrock Converse
 Vision models return coordinates in a normalized `[0, 1000]` scale. The `LiveCanvas` component dynamically maps these to the actual pixel dimensions of the user's screen using a `ResizeObserver`.
 
 ### Character Segmentation
-The `segmentDrawing` function uses **Amazon Nova Pro** to not just identify objects, but to understand their "role" in a potential story.
+The `segmentDrawing` function uses **Amazon Nova 2 Pro** to not just identify objects, but to understand their "role" in a potential story.
 
 ## 6. Deployment Nuances
 

@@ -7,7 +7,7 @@ export class AmazonAIService implements AIService {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          modelId: "amazon.nova-pro-v1:0",
+          modelId: "amazon.nova-2-pro-v1:0",
           body: {
             messages: [
               {
@@ -116,7 +116,7 @@ export class AmazonChatService implements ChatService {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          modelId: "amazon.nova-pro-v1:0",
+          modelId: "amazon.nova-2-pro-v1:0",
           body: {
             messages: this.history,
             inferenceConfig: { max_new_tokens: 1000 },
