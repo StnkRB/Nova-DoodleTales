@@ -1,0 +1,5 @@
+{
+  "name": "DoodleTales",
+  "description": "A magical storytelling adventure where your drawings come to life with Gemini Live.",
+  "requestFramePermissions": ["microphone", "camera"]
+}
