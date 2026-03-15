@@ -1,4 +1,4 @@
-# 🎨 DoodleTales: The Magical Storytelling Scout (Amazon Nova Edition)
+# 🎨 DoodleTales: The Magical Storytelling Scout (Amazon Nova 2 Edition)
 
 DoodleTales is an AI-powered interactive storytelling application that brings children's drawings to life. By combining advanced computer vision, multimodal AI, and style-consistent image generation, DoodleTales turns a simple sketch into a living, breathing adventure.
 
@@ -6,9 +6,9 @@ DoodleTales is an AI-powered interactive storytelling application that brings ch
 
 ## 🌟 Key Features
 
-- **Character Recognition (Vision)**: Automatically identifies and segments characters and objects from a child's drawing using **Amazon Nova Pro**.
-- **Multimodal Chat**: Talk directly to the "Storytelling Scout". The scout learns about your characters (names, ages, roles) in real-time using **Amazon Nova Pro's** multimodal capabilities.
-- **Style-Consistent Image Generation**: Generates new scenes for the story while strictly maintaining the original drawing style using **Amazon Nova Canvas**.
+- **Character Recognition (Vision)**: Automatically identifies and segments characters and objects from a child's drawing using **Amazon Nova 2 Pro**.
+- **Multimodal Chat**: Talk directly to the "Storytelling Scout". The scout learns about your characters (names, ages, roles) in real-time using **Amazon Nova 2 Pro's** multimodal capabilities.
+- **Style-Consistent Image Generation**: Generates new scenes for the story while strictly maintaining the original drawing style using **Amazon Nova 2 Canvas**.
 - **Interactive Canvas**: Characters "come to life" with magical halos and animations when the AI refers to them.
 
 ## 🛠️ Tech Stack
@@ -18,7 +18,7 @@ DoodleTales is an AI-powered interactive storytelling application that brings ch
 - **AI (Amazon Bedrock)**: 
   - `amazon.nova-pro-v1:0` (Vision & Reasoning)
   - `amazon.nova-canvas-v1:0` (Style-consistent Image Gen)
-- **Infrastructure**: Docker, Google Cloud Run (connected to AWS Bedrock).
+- **Infrastructure**: Docker, AWS App Runner (connected to Amazon Bedrock).
 
 ## 🚀 Quick Start
 
@@ -47,9 +47,9 @@ The app will be available at `http://localhost:3000`.
 
 ## 📦 Deployment
 
-### Cloud Run (Recommended)
+### AWS App Runner (Recommended)
 ```bash
-gcloud run deploy doodletales --source . --region europe-west2 --allow-unauthenticated
+./scripts/deploy.sh
 ```
 
 ## 📜 License

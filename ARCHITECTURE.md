@@ -48,6 +48,6 @@ The `segmentDrawing` function uses **Amazon Nova Pro** to not just identify obje
 
 ## 6. Deployment Nuances
 
-- **Cloud Run**: The app is containerized using a `Dockerfile`.
+- **AWS App Runner**: The app is containerized using a `Dockerfile` and deployed to AWS App Runner for seamless scaling.
 - **AWS Bedrock Proxy**: The Express backend securely proxies requests to AWS Bedrock using server-side credentials.
 - **Environment Variables**: AWS credentials are required in the environment to enable Bedrock access.

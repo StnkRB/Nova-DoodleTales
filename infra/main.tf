@@ -1,65 +1,58 @@
 # 🏗️ DoodleTales Infrastructure as Code (Terraform)
-# Defines the Cloud Run service and its permissions.
+# Defines the AWS App Runner service and its permissions.
 
 terraform {
   required_providers {
-    google = {
-      source  = "hashicorp/google"
+    aws = {
+      source  = "hashicorp/aws"
       version = "~> 5.0"
     }
   }
 }
 
-provider "google" {
-  project = var.project_id
-  region  = var.region
-}
-
-variable "project_id" {
-  description = "The Google Cloud Project ID"
-  type        = string
+provider "aws" {
+  region = var.region
 }
 
 variable "region" {
-  description = "The region to deploy to"
+  description = "The AWS region to deploy to"
   type        = string
-  default     = "europe-west2"
+  default     = "us-east-1"
 }
 
-# 1. Define the Cloud Run Service
-resource "google_cloud_run_service" "doodletales" {
-  name     = "doodletales"
-  location = var.region
+variable "image_uri" {
+  description = "The ECR image URI"
+  type        = string
+}
 
-  template {
-    spec {
-      containers {
-        image = "gcr.io/${var.project_id}/doodletales:latest"
-        ports {
-          container_port = 3000
-        }
-        env {
-          name  = "NODE_ENV"
-          value = "production"
+# 1. Define the App Runner Service
+resource "aws_apprunner_service" "doodletales" {
+  service_name = "doodletales"
+
+  source_configuration {
+    image_repository {
+      image_identifier      = var.image_uri
+      image_repository_type = "ECR"
+      image_configuration {
+        port = "3000"
+        runtime_environment_variables = {
+          NODE_ENV = "production"
         }
       }
     }
+    auto_deployments_enabled = true
   }
 
-  traffic {
-    percent         = 100
-    latest_revision = true
+  instance_configuration {
+    cpu    = "1024"
+    memory = "2048"
+  }
+
+  tags = {
+    Name = "DoodleTales"
   }
 }
 
-# 2. Allow Public Access
-resource "google_cloud_run_service_iam_member" "public_access" {
-  service  = google_cloud_run_service.doodletales.name
-  location = google_cloud_run_service.doodletales.location
-  role     = "roles/run.invoker"
-  member   = "allUsers"
-}
-
-output "url" {
-  value = google_cloud_run_service.doodletales.status[0].url
+output "service_url" {
+  value = aws_apprunner_service.doodletales.service_url
 }

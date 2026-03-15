@@ -1,21 +1,22 @@
-# 🎨 DoodleTales: The Magical Storytelling Scout (Amazon Nova Edition)
+# 🎨 DoodleTales: The Magical Storytelling Scout (Amazon Nova 2 Edition)
 
 ## Inspiration
-Every child's drawing is a window into a vast, hidden world. However, once the drawing is finished, it often remains static on a piece of paper or a digital screen. We were inspired by the idea of "waking up" these drawings—giving the characters voices, personalities, and the ability to go on new adventures while staying true to the child's unique artistic vision. We wanted to turn the act of drawing into a collaborative, living dialogue between a child and an AI companion powered by the latest **Amazon Nova** models.
+Every child's drawing is a window into a vast, hidden world. However, once the drawing is finished, it often remains static on a piece of paper or a digital screen. We were inspired by the idea of "waking up" these drawings—giving the characters voices, personalities, and the ability to go on new adventures while staying true to the child's unique artistic vision. We wanted to turn the act of drawing into a collaborative, living dialogue between a child and an AI companion powered by the latest **Amazon Nova 2** models.
 
 ## What it does
 DoodleTales is an interactive AI agent that brings children's art to life through three core pillars:
-1.  **Vision & Recognition**: Using **Amazon Nova Pro**, the app identifies and segments individual characters and objects within a drawing, mapping their precise locations with "magical halos."
-2.  **Multimodal Adventure**: A voice-enabled "Storytelling Scout" engages the child in a conversation. The Scout asks about the characters' names, ages, and roles, reacting dynamically to the child's voice and the drawing itself using **Amazon Nova Pro's** multimodal capabilities.
-3.  **Style-Consistent Storytelling**: As the adventure unfolds, the AI generates new scenes for the story. Crucially, these new images use **Amazon Nova Canvas** with the original drawing as a "Style Reference," ensuring that the characters, colors, and "hand-drawn" aesthetic are perfectly preserved in every new frame.
+1.  **Vision & Recognition**: Using **Amazon Nova 2 Pro**, the app identifies and segments individual characters and objects within a drawing, mapping their precise locations with "magical halos."
+2.  **Multimodal Adventure**: A voice-enabled "Storytelling Scout" engages the child in a conversation. The Scout asks about the characters' names, ages, and roles, reacting dynamically to the child's voice and the drawing itself using **Amazon Nova 2 Pro's** multimodal capabilities.
+3.  **Style-Consistent Storytelling**: As the adventure unfolds, the AI generates new scenes for the story. Crucially, these new images use **Amazon Nova 2 Canvas** with the original drawing as a "Style Reference," ensuring that the characters, colors, and "hand-drawn" aesthetic are perfectly preserved in every new frame.
 
 ## How we built it
 DoodleTales is a full-stack application built with a focus on visual fidelity and creative consistency:
 -   **Frontend**: Built with **React** and **Tailwind CSS**, using **Motion** for fluid UI transitions.
 -   **AI Intelligence (Amazon Bedrock)**:
-    -   `amazon.nova-pro-v1:0`: Powers the high-precision character segmentation and the conversational "Storytelling Scout."
+    -   `amazon.nova-pro-v1:0`: Powers the high-precision character segmentation and the conversational "Storytelling Scout" with **Nova 2** intelligence.
     -   `amazon.nova-canvas-v1:0`: Generates new story scenes using the original sketch as a style reference to maintain character identity.
 -   **Tool Integration**: We implemented custom tool specifications (`highlight_character`, `generate_story_image`) that allow the Nova models to interact directly with the frontend state.
+-   **Infrastructure**: Deployed to **AWS App Runner** for high availability and serverless scaling.
 
 ## Challenges we ran into
 -   **Style Preservation**: Ensuring the AI respects the "rough sketch" and "crayon" aesthetic of the original child's drawing. We used **Amazon Nova Canvas's** advanced conditioning to lock in the artistic style.
